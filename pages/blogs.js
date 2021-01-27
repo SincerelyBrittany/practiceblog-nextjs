@@ -1,5 +1,3 @@
-// posts will be populated at build time by getStaticProps()
-
 function renderPosts(blog) {
   return (
     <div className="blogCard">
@@ -18,8 +16,8 @@ function renderPosts(blog) {
   );
 }
 
-function Blogs({ posts }) {
-  return <ul>{posts.map((post) => renderPosts(post))}</ul>;
+function devPosts({ posts }) {
+  return <>{posts.map((post) => renderPosts(post))}</>;
 }
 
 // This function gets called at build time on server-side.
@@ -42,4 +40,4 @@ export async function getStaticProps() {
   };
 }
 
-export default Blogs;
+export default devPosts;
